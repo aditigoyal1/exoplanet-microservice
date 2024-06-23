@@ -31,7 +31,7 @@ curl -X POST http://localhost:8080/exoplanets -H "Content-Type: application/json
 
 curl -X GET http://localhost:8080/exoplanets
 
-curl -X GET http://localhost:8080/exoplanets/<id>
+curl -X GET http://localhost:8080/exoplanets/{{id}}
 
 curl -X PUT http://localhost:8080/exoplanets/1234 -H "Content-Type: application/json" -d '{
   "name": "UpdatedPlanet",
@@ -43,7 +43,7 @@ curl -X PUT http://localhost:8080/exoplanets/1234 -H "Content-Type: application/
 }'
 
 
-curl -X DELETE http://localhost:8080/exoplanets/<id>
+curl -X DELETE http://localhost:8080/exoplanets/{{id}}
 
 
 curl -X GET "http://localhost:8080/exoplanets/1234/fuel-estimation?crew_capacity=10"
