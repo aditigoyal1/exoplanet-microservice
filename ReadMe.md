@@ -1,4 +1,15 @@
-Enpoints Curl
+# Exoplanet Microservice
+
+This is a simple Go microservice for managing exoplanets. It supports adding, listing, updating, deleting exoplanets, and estimating fuel requirements for space voyages.
+
+## Running the Service
+
+### Prerequisites
+
+- Docker
+- Go (if running locally)
+
+## Endpoints
 
 curl -X POST http://localhost:8080/exoplanets -H "Content-Type: application/json" -d '{
   "name": "PlanetX",
@@ -7,9 +18,6 @@ curl -X POST http://localhost:8080/exoplanets -H "Content-Type: application/json
   "radius": 2.5,
   "type": "GasGiant"
 }'
-
-
-
 
 curl -X POST http://localhost:8080/exoplanets -H "Content-Type: application/json" -d '{
   "name": "PlanetY",
@@ -21,13 +29,9 @@ curl -X POST http://localhost:8080/exoplanets -H "Content-Type: application/json
 }'
 
 
-List All Exoplanets (GET /exoplanets)
-
 curl -X GET http://localhost:8080/exoplanets
 
-
 curl -X GET http://localhost:8080/exoplanets/<id>
-
 
 curl -X PUT http://localhost:8080/exoplanets/1234 -H "Content-Type: application/json" -d '{
   "name": "UpdatedPlanet",
@@ -39,22 +43,11 @@ curl -X PUT http://localhost:8080/exoplanets/1234 -H "Content-Type: application/
 }'
 
 
-curl -X DELETE http://localhost:8080/exoplanets/1234
+curl -X DELETE http://localhost:8080/exoplanets/<id>
 
-Fuel Estimation (GET /exoplanets/{id}/fuel-estimation)
+
 curl -X GET "http://localhost:8080/exoplanets/1234/fuel-estimation?crew_capacity=10"
 
-
-# Exoplanet Microservice
-
-This is a simple Go microservice for managing exoplanets. It supports adding, listing, updating, deleting exoplanets, and estimating fuel requirements for space voyages.
-
-## Running the Service
-
-### Prerequisites
-
-- Docker
-- Go (if running locally)
 
 ### Running with Docker
 
